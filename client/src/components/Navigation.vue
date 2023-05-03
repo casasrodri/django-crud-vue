@@ -6,7 +6,7 @@
 
   <p>
     <router-link to="/tasks" class="router-link">Tasks</router-link>
-    <router-link to="/create-task" class="router-link">Create</router-link>
+    <router-link to="/tasks/new" class="router-link">New</router-link>
   </p>
   <hr>
 </template>

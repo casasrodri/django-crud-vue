@@ -2,6 +2,7 @@
 import { reactive, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { createTask, deleteTask, updateTask, getTask } from '../api/tasks.api'
+import { showToast } from '../toast'
 
 const router = useRouter()
 const route = useRoute()
@@ -25,17 +26,20 @@ const onSubmit = async () => {
     if (route.params.id) {
         const res = await updateTask(route.params.id, { ...task })
         console.log(res)
+        showToast('Edited!')
     } else {
         const res = await createTask(task)
         console.log(res)
+        showToast('Created!')
     }
     router.push('/')
 }
 const onDelete = async () => {
-    const accepted = window.confirm(`Seguro quiere eliminar la tarea ${route.params.id} ?`)
+    const accepted = window.confirm(`Do you want to remove the task ${route.params.id} ?`)
     if (accepted) {
         const res = await deleteTask(route.params.id)
         console.log(res)
+        showToast('Deleted!')
         router.push('/')
     }
 }

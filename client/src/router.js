@@ -7,6 +7,7 @@ const routes = [
     { path: '/', redirect: '/tasks' },
     { path: '/tasks', component: TasksPage },
     { path: '/create-task', component: TaskFormPage },
+    { path: '/tasks/:id', component: TaskFormPage },
 ]
 
 const router = createRouter({

@@ -10,26 +10,27 @@ const navigateTo = (id) => {
 </script>
 
 <template>
-    <div @click="navigateTo(task.id)">
+    <div @click="navigateTo(task.id)" class="bg-zinc-800 p-3 hover:bg-zinc-700 hover:cursor-pointer">
         <h3 :class="{ tachado: task.done, normal: !task.done }">
-            {{ task.title }}
+            <span class="font-bold uppercase">
+                {{ task.title }}
+            </span>
         </h3>
 
-        <p>
+        <p class="text-slate-400">
             {{ task.description }}
         </p>
-        <hr>
     </div>
 </template>
 
 <style scoped>
 .tachado {
     text-decoration: line-through;
-    color: red;
+    color: rgb(60, 148, 64);
 }
 
 .normal {
-    color: greenyellow;
+    color: rgb(221, 156, 15);
 }
 </style>
 

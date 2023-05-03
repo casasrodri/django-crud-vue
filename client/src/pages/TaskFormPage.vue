@@ -47,13 +47,22 @@ const onDelete = async () => {
 
 
 <template>
-    <form @submit.prevent="onSubmit">
-        <input type="text" v-model="task.title" placeholder="title" />
-        <textarea rows="3" v-model="task.description" placeholder="description"></textarea>
-        <button id="save">Create</button>
-    </form>
+    <div class="max-w-xl mx-auto">
+        <form @submit.prevent="onSubmit">
+            <input type="text" v-model="task.title" placeholder="title"
+                class="bg-zinc-600 p-3 rounded-lg block w-full mb-3" />
+            <textarea rows="3" v-model="task.description" placeholder="description"
+                class="bg-zinc-600 p-3 rounded-lg block w-full mb-3"></textarea>
+            <button id="save" class="bg-indigo-500 p-3 rounded-lg block w-full mb-3">Create</button>
+        </form>
 
-    <button v-if="route.params.id" @click="onDelete">Delete</button>
+        <div class="flex justify-end">
+            <button v-if="route.params.id" @click="onDelete" class="bg-red-500 p-3 rounded-lg w-48">
+                Delete
+            </button>
+        </div>
+
+    </div>
 </template>
 
 

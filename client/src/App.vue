@@ -1,12 +1,13 @@
 <script setup>
-  import Navigation from './components/Navigation.vue'
+import Navigation from './components/Navigation.vue'
 </script>
 
 <template>
-  <Navigation/>
+  <div class="container mx-auto">
+    <Navigation />
 
-  <router-view/>
-
+    <router-view />
+  </div>
 </template>
 
 <style scoped>

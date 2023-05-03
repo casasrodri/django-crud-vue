@@ -1,14 +1,17 @@
 <template>
-  <div>
-    <Logo class="logo" />
-    <h1>Task Application</h1>
-  </div>
+  <div class="flex justify-between py-3">
 
-  <p>
-    <router-link to="/tasks" class="router-link">Tasks</router-link>
-    <router-link to="/tasks/new" class="router-link">New</router-link>
-  </p>
-  <hr>
+    <router-link to="/tasks">
+      <div class="flex">
+        <Logo class="logo" />
+        <h1 class="self-center align-middle font-bold uppercase text-2xl">
+          Task Application
+        </h1>
+      </div>
+    </router-link>
+
+    <router-link to="/tasks/new" class="bg-indigo-500 px-3 py-2 rounded-lg">New</router-link>
+  </div>
 </template>
 
 <script setup>

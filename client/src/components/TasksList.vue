@@ -1,15 +1,23 @@
 <script setup>
-    import { onMounted } from 'vue'
+    import { ref, onMounted } from 'vue'
+    import { getAllTasks } from '../api/tasks.api'
+    import TaskCard from './TaskCard.vue';
+
+    const taskList = ref()
 
     onMounted(() => {
-        console.log(34343434)
+        async function loadTasks() {
+            const res = await getAllTasks()
+            taskList.value = res.data
+        }
+        loadTasks()
     })
 
 </script>
 
 <template>
-    <div>
-        Tasks Pageee
+    <div v-for="task in taskList" :key="task.id">
+        <TaskCard :task="task"/>
     </div>
 </template>
 

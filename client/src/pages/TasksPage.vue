@@ -1,5 +1,7 @@
+<script setup>
+import TasksList from '../components/TasksList.vue'
+</script>
+
 <template>
-    <div>
-        Tasks Page
-    </div>
+    <TasksList/>
 </template>

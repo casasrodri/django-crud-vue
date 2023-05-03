@@ -1,8 +1,11 @@
 import { createApp } from 'vue'
 import router from './router'
+import PrimeVue from 'primevue/config';
 
-import './assets/main.css'
 import "toastify-js/src/toastify.css"
+import "primevue/resources/themes/lara-light-indigo/theme.css";
+import "primevue/resources/primevue.min.css";
+import './assets/main.css'
 
 import App from './App.vue'
 

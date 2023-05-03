@@ -26,11 +26,11 @@ const navigateTo = (id) => {
 <style scoped>
 .tachado {
     text-decoration: line-through;
-    color: rgb(60, 148, 64);
+    color: rgb(19 78 74);
 }
 
 .normal {
-    color: rgb(221, 156, 15);
+    color:rgb(34 197 94);
 }
 </style>
 

@@ -1,21 +1,24 @@
 <script setup>
-import { reactive, onMounted } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { createTask, deleteTask, updateTask, getTask } from '../api/tasks.api'
 import { showToast } from '../toast'
+import InputSwitch from 'primevue/inputswitch';
 
 const router = useRouter()
 const route = useRoute()
 
 const task = reactive({})
+const checked = ref(false)
 
 onMounted(() => {
     if (route.params.id) {
         async function loadTask() {
-            const { data: { title, description } } = await getTask(route.params.id)
+            const { data: { title, description, done } } = await getTask(route.params.id)
 
             task.title = title
             task.description = description
+            task.done = done
             document.querySelector('#save').innerText = 'Edit'
         }
         loadTask()
@@ -53,6 +56,13 @@ const onDelete = async () => {
                 class="bg-zinc-600 p-3 rounded-lg block w-full mb-3" />
             <textarea rows="3" v-model="task.description" placeholder="description"
                 class="bg-zinc-600 p-3 rounded-lg block w-full mb-3"></textarea>
+
+                <div class="flex justify-between p-1 block w-full mb-3">
+                    <span>Done</span>
+                    <span>
+                        <InputSwitch v-model="task.done" />
+                    </span>
+                </div>
             <button id="save" class="bg-indigo-500 p-3 rounded-lg block w-full mb-3">Create</button>
         </form>
 

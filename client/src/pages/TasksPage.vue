@@ -1,5 +1,5 @@
 <template>
     <div>
-        TasksPage
+        Tasks Page
     </div>
 </template>

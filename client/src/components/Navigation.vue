@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between py-3">
+  <div class="flex justify-between py-5">
 
     <router-link to="/tasks">
       <div class="flex">
@@ -10,12 +10,15 @@
       </div>
     </router-link>
 
-    <router-link to="/tasks/new" class="bg-indigo-500 px-3 py-2 rounded-lg">New</router-link>
+    <router-link to="/tasks/new">
+      <i class="pi pi-plus bg-green-500 p-3 rounded-lg"></i>
+    </router-link>
   </div>
 </template>
 
 <script setup>
 import Logo from './Logo.vue'
+import { PrimeIcons } from 'primevue/api';
 </script>
 
 <style scoped>

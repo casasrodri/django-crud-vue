@@ -1,7 +1,12 @@
 import axios from 'axios'
 
+// const ip = 'localhost'
+const ip = 'NO590727'
+// const ip = '192.168.1.7'
+
+
 const tasksApi = axios.create({
-    baseURL: 'http://127.0.0.1:8000/tasks/api/v1/tasks/'
+    baseURL: `http://${ip}:8000/tasks/api/v1/tasks/`
 })
 
 export const getAllTasks = () => tasksApi.get('/')

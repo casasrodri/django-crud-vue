@@ -3,7 +3,7 @@ import Navigation from './components/Navigation.vue'
 </script>
 
 <template>
-  <div class="container mx-auto">
+  <div class="container mx-auto px-3">
     <Navigation />
 
     <router-view />

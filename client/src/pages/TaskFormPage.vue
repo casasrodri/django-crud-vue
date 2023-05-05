@@ -57,7 +57,7 @@ const onDelete = async () => {
             <textarea rows="3" v-model="task.description" placeholder="description"
                 class="bg-zinc-600 p-3 rounded-lg block w-full mb-3"></textarea>
 
-                <div class="flex justify-between p-1 block w-full mb-3">
+                <div class="flex justify-between p-1 w-full mb-3">
                     <span>Done</span>
                     <span>
                         <InputSwitch v-model="task.done" />
